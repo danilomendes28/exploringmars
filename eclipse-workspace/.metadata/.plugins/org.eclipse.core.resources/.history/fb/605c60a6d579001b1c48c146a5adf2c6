@@ -1,0 +1,13 @@
+package testeapto;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Apartamento apto1 = new Apartamento(1);
+		Apartamento apto2 = new Apartamento(2);
+		
+		boolean apto1EstaOcupado =  apto1.isOcupado();
+		int apto1NumApto = apto1.numApto();
+		System.out.println("O apartamento " + apto1NumApto + " está:" + apto1EstaOcupado );
+	}
+}

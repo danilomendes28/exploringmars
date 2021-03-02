@@ -1,0 +1,20 @@
+package testeapto;
+
+public class Apartamento {
+	private boolean isOcupado;
+	private int numApto;
+	
+	public boolean isOcupado() {
+		return isOcupado;
+	}
+	
+	public int numApto() {
+		return numApto;
+	}
+	
+	
+}
+
+
+
+//assinatura de um metodo : 1- modificafir de acesso(public, private)  2 - o que ele retorna (boolena, int, char)  3- nome do metodo   4- parametros esperados 

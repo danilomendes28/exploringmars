@@ -1,0 +1,18 @@
+package testeapto;
+
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		System.out.println("Bem vindo ao gerenciador de apartamentos!");
+		System.out.println("Opções:");
+		System.out.println("\t1: Criar apartamento");
+		System.out.println("\t2: Sair");
+			
+		Scanner meuScanner = new Scanner(System.in);
+		int opcaoDoUsuario = meuScanner.nextInt();
+		
+		System.out.println("Você escolheu a opção" + opcaoDoUsuario);
+	}
+}

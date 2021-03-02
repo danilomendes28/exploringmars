@@ -1,0 +1,62 @@
+package testeapto;
+
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Predio predio = new Predio();
+
+		imprimirMenu();
+
+		
+		int opcaoDoUsuario = pegaOpcaoUsuario();
+
+		while (opcaoDoUsuario != 2) {
+
+			if (opcaoDoUsuario == 1) {
+				System.out.println("Criando um apartamento");
+				System.out.println("Qual o número do apartamento?");
+				int numApartamento = pegaOpcaoUsuario();
+				Apartamento apto = new Apartamento(numApartamento);
+				predio.addApartamento(apto);
+				System.out.println("Apartamento criado: " + apto.getInformacoes());
+				imprimirMenu();
+				opcaoDoUsuario = pegaOpcaoUsuario();
+			} else if (opcaoDoUsuario == 2) {
+				System.out.println("Até logo!");
+				System.exit(0);
+
+			} else if (opcaoDoUsuario == 3) {
+				System.out.println("Qual apartamento?");
+				int numApartamento = meuScanner.nextInt();
+
+			} else if (opcaoDoUsuario == 4) {
+				System.out.println("Exitem " + predio.totalAptos() + " apartamentos no predio.");
+
+			} else {
+				System.out.println("Opção inválida, o programa irá terminar.");
+				System.exit(1);
+			}
+
+		}
+
+	}
+
+	private static void imprimirMenu() {
+		System.out.println("Bem vindo ao gerenciador de apartamentos!");
+		System.out.println("Opções:");
+		System.out.println("\t1: Criar apartamento");
+		System.out.println("\t2: Sair");
+		System.out.println("\t3: Ocupar apartamento");
+		System.out.println("\t4: Numero de aptos no predio");
+		System.out.print("Opção: ");
+
+	}
+	
+	private static int pegaOpcaoUsuario() {
+		Scanner meuScanner = new Scanner(System.in);
+		int opcaoDoUsuario = meuScanner.nextInt();
+		return opcaoDoUsuario;
+	}
+}

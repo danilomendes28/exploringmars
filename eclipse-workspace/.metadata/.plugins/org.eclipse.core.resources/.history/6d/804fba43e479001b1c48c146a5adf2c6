@@ -1,0 +1,13 @@
+package testeapto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Predio {
+	private List<Apartamento> apartamentos = new ArrayList<>();
+	
+	public void addApartamento(Apartamento apartamento) {
+		apartamentos.add(apartamento);
+	}
+
+}

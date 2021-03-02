@@ -1,0 +1,32 @@
+package testeapto;
+
+public class Apartamento {
+	private boolean isOcupado;
+	private int numApto;
+	private String nomeInquilino;
+	
+	public Apartamento( int numApto) {
+		this.numApto = numApto;
+	}
+	
+	public boolean isOcupado() {
+		return isOcupado;
+	}
+	
+	public int numApto() {
+		return numApto;
+	}
+	
+	public void ocupar(String nomeInquilino) {
+		isOcupado = true;
+		this.nomeInquilino = nomeInquilino;
+	}
+	
+	public void desocupar() {
+		isOcupado = false;
+	}
+}
+
+
+
+//assinatura de um metodo : 1- modificafir de acesso(public, private)  2 - o que ele retorna (boolena, int, char)  3- nome do metodo   4- parametros esperados 

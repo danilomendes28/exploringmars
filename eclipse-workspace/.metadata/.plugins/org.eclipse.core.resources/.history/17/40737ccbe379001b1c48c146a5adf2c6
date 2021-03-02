@@ -1,0 +1,46 @@
+package testeapto;
+
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Predio predio = new Predio();
+		System.out.println("Bem vindo ao gerenciador de apartamentos!");
+		System.out.println("Opções:");
+		System.out.println("\t1: Criar apartamento");
+		System.out.println("\t2: Sair");
+		System.out.println("\t3: Ocupar apartamento");
+		System.out.println("\t4: Numero de apto no predio");
+		System.out.print("Opção: ");
+			
+		Scanner meuScanner = new Scanner(System.in);
+		int opcaoDoUsuario = meuScanner.nextInt();
+		
+		if (opcaoDoUsuario == 1) {
+			System.out.println("Criando um apartamento");
+			System.out.println("Qual o número do apartamento?");
+			int numApartamento = meuScanner.nextInt();
+			Apartamento apto = new Apartamento(numApartamento);
+			predio.addApartamento(apto); 
+			System.out.println("Apartamento criado: " + apto.getInformacoes());
+		} else if (opcaoDoUsuario == 2) {
+			System.out.println("Até logo!");
+			System.exit(0);
+			
+		} else if (opcaoDoUsuario == 3) {
+			System.out.println("Qual apartamento?");
+			int numApartamento = meuScanner.nextInt();
+			
+		} else if (opcaoDoUsuario == 4){
+			System.out.println("Exitem x apartamento no predio.");
+			
+		} else {
+			System.out.println("Opção inválida, o programa irá terminar.");
+			System.exit(1);
+		}
+		
+		
+		
+	}
+}

@@ -1,0 +1,43 @@
+package com.exploringmars;
+
+import com.exploringmars.model.Mars;
+import com.exploringmars.model.Probe;
+
+public class Aplication {
+
+	public static void main(String[] args) {
+
+		Mars marte = new Mars();
+		Probe probe1 = new Probe();
+		Probe probe2 = new Probe();
+		boolean conseguipousar = probe1.land(marte, 2, 3);
+		System.out.println("Conseguiu pousar a sonda 1:" + conseguipousar);
+		boolean conseguipousarsonda2 = probe2.land(marte, 2, 3);
+		System.out.println("Conseguiu pousar a sonda 2:" + conseguipousarsonda2);
+		System.out.println("A sonda 1 está na posição:" + probe1.getPositionX() +", " +  probe1.getPositionY());
+		
+		probe2.mover(marte, "M M L");
+		System.out.println("A posicção da sonda 2 é " + probe2.getPositionX() + probe2.getPositionY() + " e a direção da sonda 2 é " + probe2.getDirection());
+		
+		probe2.mover(marte, "M M L");
+		System.out.println("A posicção da sonda 2 é " + probe2.getPositionX() + probe2.getPositionY() + " e a direção da sonda 2 é " + probe2.getDirection());
+		
+		probe1.mover(marte, " M M L M L M M R");
+		System.out.println(" A posição da sonda 1 é:  " + probe1.getPositionX() + probe1.getPositionY() + " e a direção da sonda é:  " + probe1.getDirection());
+	}
+
+	
+		
+		
+			
+			
+		
+		
+				
+				
+				
+				
+		
+		
+	
+}

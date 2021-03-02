@@ -1,0 +1,11 @@
+package testeapto;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		System.out.println("Bem vindo ao gerenciador de apartamentos!");
+		System.out.println("Opções:");
+		System.out.println("      1: Criar apartamento");
+		System.out.println("      2: Sair");
+	}
+}

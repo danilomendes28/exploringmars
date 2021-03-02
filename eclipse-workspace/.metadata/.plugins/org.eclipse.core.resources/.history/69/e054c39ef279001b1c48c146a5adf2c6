@@ -1,0 +1,118 @@
+package com.exploringmars.model;
+
+public class Probe {
+	private int positionX;
+	private int positionY;
+	private char direction = 'N';
+
+	public boolean land(Mars mars, int positionX, int positionY) {
+
+		boolean[][] terreno = mars.getTerreno();
+		boolean isOcuppied = terreno[positionX][positionY];
+
+		if (isOcuppied == true) {
+			return false;
+		} else {
+			terreno[positionX][positionY] = true;
+			this.positionX = positionX;
+			this.positionY = positionY;
+			return true;
+		}
+
+	}
+
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+
+	public boolean mover(Mars mars, String comandos) {
+		String[] comandosLista = comandos.split(" ");
+		boolean[][] terreno = mars.getTerreno();
+		
+		int positionXBefore = positionX;
+		int	positionYBefore = positionY;
+		
+		
+		for (String comandoParaExecutar : comandosLista) {
+
+			if (comandoParaExecutar.equals("M")) {
+				if (direction == 'N') {
+					if (positionY == 4) {
+						retornarPosicaoSonda(positionXBefore, positionYBefore);
+						return false;
+
+					} else {
+						positionY = positionY + 1;
+					}
+
+				} else if (direction == 'S') {
+					if (positionY == 0) {
+						retornarPosicaoSonda(positionXBefore, positionYBefore);
+						return false;
+					} else {
+						positionY = positionY - 1;
+					}
+				} else if (direction == 'E') {
+					if (positionX == 4) {
+						retornarPosicaoSonda(positionXBefore, positionYBefore);
+						return false;
+
+					} else {
+						positionX = positionX + 1;
+					}
+				} else {
+					if (positionX == 0) {
+						retornarPosicaoSonda(positionXBefore, positionYBefore);
+						return false;
+					} else {
+						positionX = positionX - 1;
+					}
+				}
+
+			} else if (comandoParaExecutar.equals("R")) {
+				if (direction == 'N') {
+					direction = 'E';
+				} else if (direction == 'E') {
+					direction = 'S';
+				}else if (direction =='S') {
+					direction = 'W';
+				} else {
+					direction = 'N';
+				}
+			} else if (comandoParaExecutar.equals("L")) {
+				if (direction == 'N') {
+					direction = 'W';
+				} else if (direction == 'E') {
+					direction = 'N';
+				}else if (direction =='S') {
+					direction = 'E';
+				} else {
+					direction = 'S';
+				}
+			}
+
+		}
+		
+		if (terreno[positionX][positionY] == true) {
+			retornarPosicaoSonda(positionXBefore, positionYBefore);
+			return false;
+		}
+
+		return true;
+	}
+	
+	
+	private void retornarPosicaoSonda(int x, int y) {
+		positionX = x;
+		positionY = y;
+	}
+	
+	public char getDirection() {
+		return direction;
+	}
+
+}
